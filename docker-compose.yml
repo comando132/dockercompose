@@ -18,12 +18,12 @@ services:
       PHP_IDE_CONFIG: "serverName=Backend"
     links:
     - mysql
-    container_name: curso_web
+    container_name: ${PROJECT_NAME}_web
   mysql:
     image: mysql:5.6
     ports:
     - 3306:3306
     environment:
-    - MYSQL_ROOT_PASSWORD=12345678
-    - MYSQL_DATABASE=curso
-    container_name: curso_db
+    - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+    - MYSQL_DATABASE=${DB_NAME}
+    container_name: ${PROJECT_NAME}_db
